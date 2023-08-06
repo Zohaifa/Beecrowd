@@ -1,14 +1,12 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
-    double A, B, C, AREA1, AREA2, AREA3, AREA4, AREA5, pi;
-    scanf("%lf%lf%lf", &A, &B, &C);
-    pi = 3.14159;
-    AREA1 = 0.5*A*C;
-    AREA2 = pi*C*C;
-    AREA3 = 0.5*(A + B)*C;
-    AREA4 = B*B;
-    AREA5 = A*B;
-    printf("TRIANGULO: %.3lf\nCIRCULO: %.3lf\nTRAPEZIO: %.3lf\nQUADRADO: %.3lf\nRETANGULO: %.3lf\n", AREA1, AREA2, AREA3, AREA4, AREA5);
+    int a, b, c, max1, max2;
+    scanf("%d%d%d", &a, &b, &c);
+    max1 = (a + b + abs(a-b))/2;
+    max2 = (max1 + c + abs(max1 - c))/2;
+    printf("%d eh o maior\n", max2);
+
     return 0;
 }
